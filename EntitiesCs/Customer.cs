@@ -47,20 +47,6 @@ namespace EntitiesCs
 		}
         // Propiedad autoimplementada
         public String Nationality { get; set; }
-
-        private List<Account> accounts;
-        public void AddAccount(Account account)
-        {
-            accounts.Add(account);
-        }
-        public List<Account> GetAccounts()
-        {
-            return accounts;
-        }
-        public void RemoveAccount(Account account)
-        {
-            accounts.Remove(account);
-        }
         public override string ToString()
         {
             return name;

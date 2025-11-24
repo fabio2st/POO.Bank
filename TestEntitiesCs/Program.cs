@@ -8,25 +8,8 @@ namespace TestEntitiesCs
     {
         static void Main(string[] args)
         {
-            BankTest();
-            CustomerTest();
-            //AccountTest();
-            //SavingAccountTest();
-            //CheckingAccountTest();
-        }
-
-        private static void BankTest()
-		{
-			Bank bank = new Bank();
 			Customer customer1;
-			customer1 = new Customer("pepo", 98765432);
-			bank.AddCliente(customer1);
-			customer1 = new Customer("papo", 98765432, new DateTime(1990, 5, 23));   // inicialización
-			bank.AddCliente(customer1);
-			foreach (var item in bank.GetCustomers())
-			{
-				Console.WriteLine(item);
-			}
+			customer1 = new Customer("Papo", 98765432, new DateTime(1990, 5, 23));   // inicialización
 
 			CheckingAccount account1 = new CheckingAccount(customer1, 12345, 10000, 5000);
 			SavingAccount account2 = new SavingAccount(customer1, 12346, 20000, 0.10m);
@@ -38,7 +21,6 @@ namespace TestEntitiesCs
 
 			customer1.RemoveAccount(account1);
 			DisplayAccounts(customer1);
-
 		}
 
 		private static void DisplayAccounts(Customer customer1)

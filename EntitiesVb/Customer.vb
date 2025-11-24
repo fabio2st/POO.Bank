@@ -3,17 +3,10 @@ Imports System.Threading
 Public Class Customer
     Private accounts As List(Of Account)
     Public Sub New()
-        Me.New("", 0)
-		'Me.Name = ""
-		'Me.id = 0
-		'BirthDay = Nothing
-		accounts = New List(Of Account)()
-	End Sub
-    Public Sub New(Name As String, id As Integer)
-        Me.New(Name, id, Nothing)
-        'Me.Name = Name
-        'Me.id = id
+        'Me.Name = ""
+        'Me.id = 0
         'BirthDay = Nothing
+        accounts = New List(Of Account)()
     End Sub
     Public Sub New(name As String, id As Integer)
         Me.New()
@@ -60,17 +53,6 @@ Public Class Customer
     End Property
     ' Propiedad autoimplementada
     Public Property Nationality As String
-
-    Private _accounts As List(Of Account)
-    Public Sub AddAccount(account As Account)
-        _accounts.Add(account)
-    End Sub
-    Public Function GetAccounts() As List(Of Account)
-        Return _accounts
-    End Function
-    Public Sub RemoveAccount(account As Account)
-        _accounts.Remove(account)
-    End Sub
     Public Overrides Function ToString() As String
         Return Name
     End Function
@@ -83,7 +65,7 @@ Public Class Customer
     Public Function GetAccounts() As List(Of Account)
         Return accounts
     End Function
-	Public Sub RemoveAccount(account As Account)
+    Public Sub RemoveAccount(account As Account)
         account.Customer = Nothing
         accounts.Remove(account)
     End Sub
