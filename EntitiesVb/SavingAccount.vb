@@ -2,8 +2,8 @@
     Inherits Account    ' esta clase dispone de todos los miembre de Account
 
     Private _MonthlyInterestRate As Decimal
-    Public Sub New(number As Integer, balance As Decimal, monthlyInterestRate As Decimal)
-        MyBase.New(number, balance)   ' constructor no se hereda, si no se especifica se invoca New()
+    Public Sub New(customer As Customer, number As Integer, balance As Decimal, monthlyInterestRate As Decimal)
+        MyBase.New(customer, number, balance)   ' constructor no se hereda, si no se especifica se invoca New()
         _MonthlyInterestRate = monthlyInterestRate
     End Sub
     Public Property MonthlyInterestRate() As Decimal

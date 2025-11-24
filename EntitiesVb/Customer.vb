@@ -1,10 +1,12 @@
 Public Class Customer
+    Private accounts As List(Of Account)
     Public Sub New()
         Me.New("", 0)
-        'Me.Name = ""
-        'Me.id = 0
-        'BirthDay = Nothing
-    End Sub
+		'Me.Name = ""
+		'Me.id = 0
+		'BirthDay = Nothing
+		accounts = New List(Of Account)()
+	End Sub
     Public Sub New(Name As String, id As Integer)
         Me.New(Name, id, Nothing)
         'Me.Name = Name
@@ -53,4 +55,17 @@ Public Class Customer
     Public Overrides Function ToString() As String
         Return Name
     End Function
+
+    'Public Sub AddAccount(account As Account)
+    Friend Sub AddAccount(account As Account)
+        'account.Customer = Me
+        accounts.Add(account)
+    End Sub
+    Public Function GetAccounts() As List(Of Account)
+        Return accounts
+    End Function
+	Public Sub RemoveAccount(account As Account)
+        account.Customer = Nothing
+        accounts.Remove(account)
+    End Sub
 End Class
