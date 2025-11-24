@@ -62,7 +62,7 @@ namespace EntitiesCs
         }
         public void RemoveAccount(Account account)
         {
-            //account.Customer = null;
+            account.Customer = null;
 			accounts.Remove(account);
         }
         public List<Account> GetAccounts()
