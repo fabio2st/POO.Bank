@@ -19,8 +19,9 @@
     End Sub
 
     Public Overrides Sub Withdraw(value As Decimal)
-        If Balance >= value Then
-            _balance -= value
+        If Balance < value Then
+            Throw New ArgumentException("Sin saldo suficiente")
         End If
+        _balance -= value
     End Sub
 End Class

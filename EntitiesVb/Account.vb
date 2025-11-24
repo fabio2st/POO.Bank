@@ -14,9 +14,10 @@
             Return _number
         End Get
         Set(value As Integer)
-            If value > 9999 Then
-                _number = value
+            If value < 10000 Then
+                Throw New ArgumentException("Numero de cuenta debe ser 10000 o superior")
             End If
+            _number = value
         End Set
     End Property
     Public ReadOnly Property Balance As Decimal

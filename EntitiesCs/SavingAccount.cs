@@ -19,8 +19,9 @@ namespace EntitiesCs
 
         public override void Withdraw(decimal value)
         {
-            if (Balance >= value)
-                balance -= value;
+            if (Balance < value)
+                throw new ArgumentException("Sin monto suficiente");
+            balance -= value;
         }
     }
 }

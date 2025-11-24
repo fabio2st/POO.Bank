@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using EntitiesCs;
 
 namespace TestEntitiesCs
@@ -7,11 +8,11 @@ namespace TestEntitiesCs
     {
         static void Main(string[] args)
         {
-            //CustomerTest();
+            BankTest();
+            CustomerTest();
             //AccountTest();
             //SavingAccountTest();
             //CheckingAccountTest();
-            BankTest();
         }
 
         private static void BankTest()
@@ -102,30 +103,6 @@ namespace TestEntitiesCs
         //    Console.WriteLine("Numero: " + account2.Number);
         //    Console.WriteLine("Saldo: " + account2.Balance);
         //}
-        private static void CustomerTest()
-        {
-            Customer customer1; // instanciación
-            customer1 = new Customer();   // inicialización
-            customer1.Name = "Pepe";
-            customer1.Id = 12345678;
-            customer1.BirthDay = new DateTime(2000, 08, 10);
-            ShowCustomer(customer1);
-            Customer customer2; // instanciación
-            customer2 = new Customer("pepo",98765432);   // inicialización
-            ShowCustomer(customer2);
-            Customer customer3; // instanciación
-            customer3 = new Customer("papo", 98765432, new DateTime(1990,5,23));   // inicialización
-            ShowCustomer(customer3);
-            Customer customer4; // instanciación
-            customer4 = new Customer {Name = "pipo"};   // inicialización
-            ShowCustomer(customer4);
-            Customer customer5; // instanciación
-            customer5 = new Customer {
-                Name ="pepa", 
-                BirthDay = new DateTime(1990, 5, 23)
-            };   // inicialización
-            ShowCustomer(customer5);
-        }
         private static void ShowCustomer(Customer customer)
         {
             Console.WriteLine("Nombre: " + customer.Name);

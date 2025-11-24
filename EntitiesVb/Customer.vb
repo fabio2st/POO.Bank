@@ -1,3 +1,5 @@
+Imports System.Threading
+
 Public Class Customer
     Private accounts As List(Of Account)
     Public Sub New()
@@ -13,20 +15,24 @@ Public Class Customer
         'Me.id = id
         'BirthDay = Nothing
     End Sub
-    Public Sub New(Name As String, id As Integer, BirthDay As Date)
-        Me.Name = Name
+    Public Sub New(name As String, id As Integer)
+        Me.New()
+        Me.Name = name
         Me.Id = id
-        Me.BirthDay = BirthDay
     End Sub
-    ' Campo, este forma parte de la implementación privada
+    Public Sub New(name As String, id As Integer, birthDay As Date)
+        Me.New(name, id)
+        Me.BirthDay = birthDay
+    End Sub
+    ' Campo, este forma parte de la implementaciÃ³n privada
     Private _name As String
-    ' Propiedad, forma parte de la interfaz pública
+    ' Propiedad, forma parte de la interfaz pÃºblica
     Public Property Name As String
         ' Metodo Getter es para obtener el valor
         Get
             Return _name
         End Get
-        ' Método Setter es para asignar el valor
+        ' MÃ©todo Setter es para asignar el valor
         Set(value As String)
             ' aqui se pueden hacer validaciones
             _name = value.ToUpper()
@@ -52,6 +58,19 @@ Public Class Customer
             _birthDay = value
         End Set
     End Property
+    ' Propiedad autoimplementada
+    Public Property Nationality As String
+
+    Private _accounts As List(Of Account)
+    Public Sub AddAccount(account As Account)
+        _accounts.Add(account)
+    End Sub
+    Public Function GetAccounts() As List(Of Account)
+        Return _accounts
+    End Function
+    Public Sub RemoveAccount(account As Account)
+        _accounts.Remove(account)
+    End Sub
     Public Overrides Function ToString() As String
         Return Name
     End Function

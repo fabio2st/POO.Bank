@@ -25,8 +25,9 @@ namespace EntitiesCs
             }
             set
             {
-                if (value > 9999)   // regla para aceptar el valor
-                    number = value;
+                if (value < 10000)   // regla para aceptar el valor
+                    throw new ArgumentException("Numero de cuenta debe ser 10000 o superior");
+                number = value;
             }
         }
 		public Customer Customer

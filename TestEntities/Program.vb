@@ -10,7 +10,7 @@ Module Program
     End Sub
 
     Private Sub BankDemo()
-        Dim customer1 As Customer    ' Instanciaci髇
+        Dim customer1 As Customer    ' Instanciaci贸n
         customer1 = New Customer()   ' Inicializacion
         customer1.Name = "Pepe"
         customer1.Id = 12345678
@@ -35,22 +35,22 @@ Module Program
     End Sub
 
     Private Sub CustomerTest()
-        Dim customer1 As Customer    ' Instanciaci髇
+        Dim customer1 As Customer    ' Instanciaci贸n
         customer1 = New Customer()   ' Inicializacion
         customer1.Name = "Pepe"
         customer1.Id = 12345678
         customer1.BirthDay = #2000-08-10#
         ShowCustomer(customer1)
-        Dim customer2 As Customer    ' Instanciaci髇
+        Dim customer2 As Customer    ' Instanciaci贸n
         customer2 = New Customer("pepo", 98765432)   ' Inicializacion
         ShowCustomer(customer2)
-        Dim customer3 As Customer    ' Instanciaci髇
+        Dim customer3 As Customer    ' Instanciaci贸n
         customer3 = New Customer("papo", 98765432, #1990-5-23#)   ' Inicializacion
         ShowCustomer(customer3)
-        Dim customer4 As Customer    ' Instanciaci髇
+        Dim customer4 As Customer    ' Instanciaci贸n
         customer4 = New Customer With {.Name = "pipo"}    ' Inicializacion
         ShowCustomer(customer4)
-        Dim customer5 As Customer    ' Instanciaci髇
+        Dim customer5 As Customer    ' Instanciaci贸n
         customer5 = New Customer With {
             .Name = "pepa",
             .BirthDay = #1990-5-23#}   ' Inicializacion
@@ -63,17 +63,17 @@ Module Program
     End Sub
 
     Private Sub CheckingAccountTest()
-        'Dim customer2 As Customer    ' Instanciaci髇
+        'Dim customer2 As Customer    ' Instanciaci贸n
         'customer2 = New Customer("pepo", 98765432)   ' Inicializacion
         'Dim account1 As CheckingAccount = New CheckingAccount()
         'Console.WriteLine(account1)
-        'account1.Number = 123 ' falla la asignaci髇
+        'account1.Number = 123 ' falla la asignaci贸n
         'account1.Number = 12345
         'account1.OverdraftAmount = 5000
         ''account1.Customer = customer2
         'Console.WriteLine(account1)
         ''account1.Saldo = 1000 no es posible porque es solo lectura
-        'Console.WriteLine("N鷐ero: " & account1.Number)
+        'Console.WriteLine("N煤mero: " & account1.Number)
         'Console.WriteLine("Customer: " & account1.Customer.ToString())
         'Dim customerX = account1.Customer
         'Console.WriteLine("Customer: " & customerX.ToString())
@@ -90,12 +90,12 @@ Module Program
     Private Sub TestCurrentAccount()
         'Dim account1 As CheckingAccount = New CheckingAccount()
         'Console.WriteLine(account1)
-        'account1.Number = 123 ' falla la asignaci髇
+        'account1.Number = 123 ' falla la asignaci贸n
         'account1.Number = 12345
         'account1.OverdraftAmount = 5000
         'Console.WriteLine(account1)
         ''account1.Saldo = 1000 no es posible porque es solo lectura
-        'Console.WriteLine("N鷐ero: " & account1.Number)
+        'Console.WriteLine("N煤mero: " & account1.Number)
         'Console.WriteLine("Saldo: " & account1.Balance)
         'account1.Deposit(3000)
         'Console.WriteLine("Saldo: " & account1.Balance)
@@ -106,11 +106,11 @@ Module Program
     End Sub
     Private Sub SavingAccountTest()
         'Dim account1 As SavingAccount = New SavingAccount(12345, 10000, 0.1)
-        'account1.Number = 123 ' falla la asignaci髇
+        'account1.Number = 123 ' falla la asignaci贸n
         'account1.Number = 12345
         'account1.MonthlyInterestRate = 0.1
         ''account1.Saldo = 1000 no es posible porque es solo lectura
-        'Console.WriteLine("N鷐ero: " & account1.Number)
+        'Console.WriteLine("N煤mero: " & account1.Number)
         'Console.WriteLine("Saldo: " & account1.Balance)
         'Console.WriteLine("Tasa de interes mensual: " & account1.MonthlyInterestRate)
         'account1.Deposit(3000)
@@ -125,11 +125,11 @@ Module Program
     'Private Sub AccountTest()
     '    Dim account1 As Account = New Account()
     '    Console.WriteLine(account1)
-    '    account1.Number = 123 ' falla la asignaci髇
+    '    account1.Number = 123 ' falla la asignaci贸n
     '    account1.Number = 12345
     '    'account1.Saldo = 1000 no es posible porque es solo lectura
     '    Console.WriteLine(account1.ToString())
-    '    Console.WriteLine("N鷐ero: " & account1.Number)
+    '    Console.WriteLine("N煤mero: " & account1.Number)
     '    Console.WriteLine("Saldo: " & account1.Balance)
     '    account1.Deposit(3000)
     '    Console.WriteLine("Saldo: " & account1.Balance)
