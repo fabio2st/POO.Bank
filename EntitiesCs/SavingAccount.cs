@@ -7,14 +7,13 @@ namespace EntitiesCs
     public class SavingAccount : Account
     {
         //constructor no se hereda, si no se especifica se invoca base()
-        public SavingAccount(Customer customer, int number, decimal saldo, decimal monthlyInterestRate) : base(customer, number, saldo)  
+        public SavingAccount(Customer customer, int number, decimal saldo) : base(customer, number, saldo)  
         {
-            MonthlyInterestRate = monthlyInterestRate;
         }
-        public decimal MonthlyInterestRate { get; set; }
+        public static decimal MonthlyInterestRate { get; set; }
         public void DepositMonthlyInterest()
         {
-            Withdraw(Balance * MonthlyInterestRate); // Metodo heredado
+            Deposit(Balance * MonthlyInterestRate); // Metodo heredado
         }
 
         public override void Withdraw(decimal value)
