@@ -1,14 +1,14 @@
 ﻿Public MustInherit Class Account
     Private _number As Integer
     Protected _balance As Decimal
-    Public Sub New()
-        _Enabled = True
-    End Sub
-    Public Sub New(number As Integer, balance As Decimal)
+
+    Public Sub New(customer As Customer, number As Integer, balance As Decimal)
         MyBase.New()
+        _Enabled = True
         Me.Number = number
-        _balance = balance
-    End Sub
+		_balance = balance
+		Me.Customer = customer
+	End Sub
     Public Property Number As Integer
         Get
             Return _number
@@ -30,8 +30,10 @@
         Get
             Return _customer
         End Get
-        Set(value As Customer)
-            _customer = value
+		'Friend Set(value As Customer)
+		Set(value As Customer)
+			value.AddAccount(Me)
+			_customer = value
         End Set
     End Property
     Public Property Enabled As Boolean

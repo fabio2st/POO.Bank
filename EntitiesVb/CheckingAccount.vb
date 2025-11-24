@@ -1,6 +1,10 @@
 ﻿Public Class CheckingAccount
     Inherits Account
-    Private _OverdraftAmount As String
+	Private _OverdraftAmount As String
+    Public Sub New(customer As Customer, number As Integer, balance As Decimal, overdraftAmount As String)
+        MyBase.New(customer, number, balance)
+        Me.OverdraftAmount = overdraftAmount
+    End Sub
     Public Property OverdraftAmount() As String
         Get
             Return _OverdraftAmount

@@ -5,11 +5,12 @@ namespace EntitiesCs
 {
     public class Customer
     {
+        private List<Account> accounts = new List<Account>();
         public Customer()
         {
             Nationality = "Argentino";
         }
-        public Customer(string Name, int id) : this ()
+        public Customer(string Name, int id) : this()
         {
             this.Name = Name;
             this.Id = id;
@@ -63,6 +64,21 @@ namespace EntitiesCs
         public override string ToString()
         {
             return name;
+        }
+        //public void AddAccount(Account account)
+        internal void AddAccount(Account account)
+        {
+            //account.Customer = this;
+			accounts.Add(account);
+        }
+        public void RemoveAccount(Account account)
+        {
+            account.Customer = null;
+			accounts.Remove(account);
+        }
+        public List<Account> GetAccounts()
+        {
+            return accounts;
         }
     }
 }
