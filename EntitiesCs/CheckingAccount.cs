@@ -6,7 +6,7 @@ namespace EntitiesCs
 {
     public class CheckingAccount : Account
     {
-        public CheckingAccount(int number, decimal balance, decimal overdraftAmount) : base(number, balance)
+        public CheckingAccount(Customer customer,int number, decimal balance, decimal overdraftAmount) : base(customer, number, balance)
         {
             OverdraftAmount = overdraftAmount;
         }

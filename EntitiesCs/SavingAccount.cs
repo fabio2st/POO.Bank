@@ -7,7 +7,7 @@ namespace EntitiesCs
     public class SavingAccount : Account
     {
         //constructor no se hereda, si no se especifica se invoca base()
-        public SavingAccount(int number, decimal saldo, decimal monthlyInterestRate) : base(number, saldo)  
+        public SavingAccount(Customer customer, int number, decimal saldo, decimal monthlyInterestRate) : base(customer, number, saldo)  
         {
             MonthlyInterestRate = monthlyInterestRate;
         }
