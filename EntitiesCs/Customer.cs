@@ -51,7 +51,6 @@ namespace EntitiesCs
         {
             return name;
         }
-        //public void AddAccount(Account account)
         internal void AddAccount(Account account)
         {
             //account.Customer = this;

@@ -33,10 +33,10 @@ namespace EntitiesCs
 		public Customer Customer
 		{
 			get => customer;
-            //internal set
-			set
+            internal set
 			{
-                value.AddAccount(this);
+                if (value != null)
+                    value.AddAccount(this);
 				customer = value;
 			}
 		}

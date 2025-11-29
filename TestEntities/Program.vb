@@ -3,27 +3,30 @@ Imports EntitiesVb
 Imports EntitiesVb.EntitiesCs
 Module Program
 	Sub Main(args As String())
+		BankDemo()
 		Dim customer1 As Customer    ' Instanciación
-		customer1 = New Customer()   ' Inicializacion
-		customer1.Name = "Pepe"
-		customer1.Id = 12345678
-		customer1.BirthDay = #2000-08-10#
+        customer1 = New Customer()   ' Inicializacion
+        customer1.Name = "Pepe"
+        customer1.Id = 12345678
+        customer1.BirthDay = #2000-08-10#
 
-		Bank.AddCustomer(customer1)
-		Bank.AddCustomer(New Customer("Ana", 87654321, #1995-03-15#))
-		Bank.AddCustomer(New Customer("Luis", 11223344, #1988-11-30#))
+        Bank.AddCustomer(customer1)
+        Bank.AddCustomer(New Customer("Ana", 87654321, #1995-03-15#))
+        Bank.AddCustomer(New Customer("Luis", 11223344, #1988-11-30#))
         Console.WriteLine("Numero de clientes en el banco: " & Bank.CustomerCounter)
         For Each customer As Customer In Bank.GetCustomers()
             ShowCustomer(customer)
             Console.WriteLine()
-		Next
+        Next
+    End Sub
+    Private Sub BankDemo()
+        Dim customer1 As Customer    ' Instanciación
+        customer1 = New Customer()   ' Inicializacion
+        customer1.Name = "Pepe"
+        customer1.Id = 12345678
+        customer1.BirthDay = #2000-08-10#
 
         Dim account1 As SavingAccount = New SavingAccount(customer1, 12345, 10000)
-		SavingAccount.MonthlyInterestRate = 0.1D
-        Console.WriteLine("El saldo antes del interes: " & account1.Balance)
-        account1.DepositMonthlyInterest()
-        Console.WriteLine("El saldo despues del interes: " & account1.Balance)
-
         Dim account2 As CheckingAccount = New CheckingAccount(customer1, 12346, 20000, 10000)
 
         'customer1.AddAccount(account1)
@@ -33,6 +36,12 @@ Module Program
 
         customer1.RemoveAccount(account1)
         DisplayAccounts(customer1)
+
+
+        SavingAccount.MonthlyInterestRate = 0.1D
+        Console.WriteLine("El saldo antes del interes: " & account1.Balance)
+        account1.DepositMonthlyInterest()
+        Console.WriteLine("El saldo despues del interes: " & account1.Balance)
     End Sub
 
     Private Sub DisplayAccounts(customer1 As Customer)

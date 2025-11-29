@@ -8,8 +8,13 @@ namespace TestEntitiesCs
     {
         static void Main(string[] args)
         {
-    		Customer customer1;
+            TestCustomerAccounts();
+		}
+        static void TestBankCustomers()
+		{
+			Customer customer1;
 			customer1 = new Customer("Papo", 98765432, new DateTime(1990, 5, 23));   // inicialización
+			// Miembro de clase
             Bank.AddCustomer(customer1);
             Bank.AddCustomer(new Customer("Ana", 12345678, new DateTime(1985, 8, 15)));
             Bank.AddCustomer(new Customer("Luis", 87654321, new DateTime(1992, 12, 3)));
@@ -33,19 +38,26 @@ namespace TestEntitiesCs
     		Customer customer1;
 			customer1 = new Customer("Papo", 98765432, new DateTime(1990, 5, 23));   // inicialización
 
-			CheckingAccount account1 = new CheckingAccount(customer1, 12345, 10000, 5000);
-			SavingAccount account2 = new SavingAccount(customer1, 12346, 20000);
+            try
+            {
+                new CheckingAccount(customer1, 1, 10000, 10000);
+            }
+            catch (ArgumentException ex)
+            {
+				Console.WriteLine("Error: " + ex.Message);
+            }
 
-			//customer1.AddAccount(account1);
-			//customer1.AddAccount(account2);
+            CheckingAccount account1 = new CheckingAccount(customer1, 12345, 10000, 5000);
+            SavingAccount account2 = new SavingAccount(customer1, 12346, 20000);
 
-			DisplayAccounts(customer1);
+            //customer1.AddAccount(account1);
+            //customer1.AddAccount(account2);
 
-			customer1.RemoveAccount(account1);
-			DisplayAccounts(customer1);
+            DisplayAccounts(customer1);
 
-			// Miembro de clase
-		}
+            customer1.RemoveAccount(account1);
+            DisplayAccounts(customer1);
+        }
 
 		private static void DisplayAccounts(Customer customer1)
 		{

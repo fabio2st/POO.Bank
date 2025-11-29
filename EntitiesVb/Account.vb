@@ -30,9 +30,10 @@
         Get
             Return _customer
         End Get
-        'Friend Set(value As Customer)
-        Set(value As Customer)
-            value.AddAccount(Me)
+        Friend Set(value As Customer)
+            If value IsNot Nothing Then
+                value.AddAccount(Me)
+            End If
             _customer = value
         End Set
     End Property
